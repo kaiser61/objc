@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
+    <title>081417161刘凯歌</title>
+    <link rel="short icon" href="./Resource/Resource/icon.png" >
+    <link rel="stylesheet" href="./test.css">
+    <style>
+        article{
+            margin: 20px;
+        }
+        h3{
+            color:red;
+            font-size: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dddddd;
+        }
+        h4{
+            font-size: 14px;
+        }
+        p{
+            font-size: 12px;
+            text-indent: 2em;
+            /*line-height  设置行高 可用于控制行间距*/
+            line-height: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span>平台风采</span>
+</header>
+
+<section class="DS_second_section">
+    <img src="./Resource/Resource/banner4.png" alt="轮播图1">
+</section>
+
+
+<!--三-->
+<article>
+<!--    <h3>公司简介</h3>-->
+<!--    <h4>华山科技有限公司</h4>-->
+<!--    <p>华杉科技（北京）有限公司一直秉承“在高薪和经验的路上，我们只做行业第一”，致力于为整个互联网科技行业输送高级技术人才、做好每一款外包项目。-->
+<!--    </p>-->
+<!--    <p>华杉科技（北京）有限公司是一家既专注于培养高级IT技术人才，为学员提供定制化IT职业规划方案及意见咨询服务，又是国内领先的智能手机软件外包服务商。公司由原东方爱智技术总监，原58同城技术总监，河南大学软件学院优秀毕业生共同创立。-->
+<!--    </p>-->
+<!--    <p>华杉科技（北京）有限公司拥有业内知名的教研团队和雄厚的课程研发能力，课程的快速迭代时刻紧跟当今较为流行的前沿技术、不同行业的外包项目作为支撑，强有力的保证了学员的核心竞争力。强竞争力的一线技术人员和完善的外包服务流程充分保证了每一款项目的顺利执行。</p>-->
+    <h3 id="title"></h3>
+    <h4 id="subTitle"></h4>
+    <p id="info"></p>
+    <script>
+        var title_bar=document.getElementById("title");
+        var subtitle_bar=document.getElementById("subTitle")
+        var info_bar=document.getElementById("info")
+
+        var title=window.localStorage.getItem("title")
+        var subTitle=window.localStorage.getItem("subTitle")
+        var info=window.localStorage.getItem("info")
+
+        if (title &&subTitle &&info){
+            title_bar.innerHTML=title;
+            subtitle_bar.innerHTML=subTitle;
+            info_bar.innerHTML=info;
+        }else{
+
+            var xhr=new XMLHttpRequest();
+            //与服务端建立连接 get/post
+            xhr.open('get',' https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/aboutus')
+            //设置请求头，行服务器发送的数据是表单形式的
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            //发送数据
+            xhr.send('');
+            //接收数据
+            xhr.onreadystatechange=function () {
+                //xhr.readyState   ajax数据请求完成
+                if(xhr.readyState==4&&xhr.status==200){
+                    var responseData=JSON.parse(xhr.responseText);
+                    // var code=responseData.code;
+                    var Data=responseData.data;
+                    window.localStorage.setItem("title",Data.title)
+                    window.localStorage.setItem("title",Data.subTitle)
+                    window.localStorage.setItem("title",Data.info)
+
+                    title_bar.innerHTML=Data.title;
+                    subtitle_bar.innerHTML=Data.subTitle;
+                    info_bar.innerHTML=Data.info;
+                }
+            }
+        }
+    </script>
+</article>
+
+
+<!--四-->
+<footer class="DS_fourth_section">
+    <a href="./test.html"> <img src="./Resource/Resource/nav10.png"> <span >小弟服务</span></a>
+    <a href="./test2.html"> <img src="./Resource/Resource/nav20.png"> <span>企业项目</span></a>
+    <a href="./test3.html"> <img src="./Resource/Resource/nav30.png"> <span>服务流程</span></a>
+    <a href="./PlatformMien.html"> <img src="./Resource/Resource/nav41.png"> <span style="color:red">平台风采</span></a>
+    <a href="./test5.html"> <img src="./Resource/Resource/nav50.png"> <span>我的小弟</span></a>
+</footer>
+
+</body>
+</html>

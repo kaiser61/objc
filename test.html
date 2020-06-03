@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+    user-scale=no  用户缩放
+    width=devide-width 宽度适配
+    initial-scale=1 高度适配
+-->
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
+    <title>081417161刘凯歌</title>
+    <link rel="short icon" href="./Resource/Resource/icon.png" >
+    <link rel="stylesheet" href="./test.css">
+
+    <style>
+        /*.DS_three_section{*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+        /*    */
+        /*}*/
+        /*.DS_three_section ul{*/
+        /*    display: flex;*/
+        /*    flex-direction: row;*/
+        /*    margin-bottom: 10px;*/
+        /*    background-color: white;*/
+        /*    vertical-align: middle;*/
+        /*    height:100px;*/
+        /*}*/
+        /*.DS_three_section ul li{*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+
+        /*    font-size: 18px;*/
+        /*    text-align: center;*/
+        /*    flex:1;*/
+        /*    align-items: center;*/
+
+        /*}*/
+        /*.DS_three_section img{*/
+        /*    height:50px;*/
+        /*    width:50px;*/
+        /*    text-align: center;*/
+        /*    vertical-align: middle;*/
+        /*}*/
+        ul{
+            display: table;
+            width:100%;
+            background-color: white;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+        ul li{
+            display: table-cell;
+            width:33.3%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        ul li span{
+            display: block;
+        }
+        .first_ul{
+            margin-top: -6px;
+        }
+        .block{
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<!--一-->
+<header>
+    <span>小弟服务</span>
+</header>
+
+<!--二-->
+<section class="DS_second_section">
+    <img id="banner_img" src="./Resource/Resource/banner-1.png" alt="轮播图1">
+    <script>
+        var img_num=1;
+        var banner=document.getElementById("banner_img");
+        function changeImg(){
+            img_num+=1;
+            if (img_num>3)
+                img_num=1;
+            banner.src="./Resource/Resource/banner-"+img_num+".png";
+
+        }
+        setInterval(changeImg,2000);
+
+    </script>
+
+</section>
+
+<!--三-->
+<section class="DS_three_section">
+    <ul class="first_ul">
+        <li><img src="./Resource/Resource/index1.png"> <span>企业项目</span></li>
+        <li><img src="./Resource/Resource/index2.png"> <span>平台风采</span></li>
+        <li><img src="./Resource/Resource/index3.png"> <span>报名流程</span></li>
+    </ul>
+
+    <ul>
+        <li><img src="./Resource/Resource/index4.png"> <span>客户管理</span></li>
+        <li><img src="./Resource/Resource/index5.png"> <span>财务管理</span></li>
+        <li><img src="./Resource/Resource/index6.png"> <span>新闻公告</span></li>
+    </ul>
+
+    <ul>
+        <li><img src="./Resource/Resource/index7.png"> <span>工程案例</span></li>
+        <li><img src="./Resource/Resource/index8.png"> <span>修改密码</span></li>
+        <li><img src="./Resource/Resource/index9.png"> <span>会员注册</span></li>
+    </ul>
+    <ul>
+        <li><img src="./Resource/Resource/index7.png"> <span>工程案例</span></li>
+        <li><img src="./Resource/Resource/index8.png"> <span>修改密码</span></li>
+        <li><img src="./Resource/Resource/index9.png"> <span>会员注册</span></li>
+    </ul>
+</section>
+
+
+<footer class="DS_fourth_section">
+    <a href="./test.html"> <img src="./Resource/Resource/nav11.png"> <span style="color:red">小弟服务</span></a>
+    <a href="./test2.html"> <img src="./Resource/Resource/nav20.png"> <span>企业项目</span></a>
+    <a href="./test3.html"> <img src="./Resource/Resource/nav30.png"> <span>服务流程</span></a>
+    <a href="./PlatformMien.html"> <img src="./Resource/Resource/nav40.png"> <span>平台风采</span></a>
+    <a href="./test5.html"> <img src="./Resource/Resource/nav50.png"> <span>我的小弟</span></a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
+    <title>081417161刘凯歌</title>
+    <link rel="short icon" href="./Resource/Resource/icon.png" >
+    <link rel="stylesheet" href="./test.css">
+    <script type="text/javascript" src="./function.js"></script>
+    <style>
+        .i_head_div{
+            text-align: center;
+        }
+        .i_head_div img{
+            margin-top: 50px;
+        }
+        .i_inner_div{
+            border:1px solid #dddddd;
+            border-radius: 10px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: white;
+            height: 100px;
+            margin-top: 30px;
+        }
+        .i_inner_div div{
+            height: 50px;
+
+        }
+        .i_inner_div div span{
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        input{
+            outline: medium;
+            background-color: transparent;
+            border: 0;
+        }
+        .log{
+            background-color: rgb(36,92,161);
+            text-align: center;
+            height: 50px;
+            width:90%;
+            margin:0 auto;
+            border-radius: 10px;
+            margin-top: 20px;
+
+        }
+        .log input{
+            font-size: 20px;
+            color:white;
+            line-height: 50px;
+            height: 50px;
+            width: 100%;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<header>
+    <span>登录</span>
+</header>
+<form>
+<div class="i_head_div">
+    <img src="./Resource/Resource/head.png">
+    <div class="i_inner_div">
+        <div style="border-bottom: 1px solid #dddddd">
+            <span>账号名:</span>
+            <input id="i_account" type="text" name="admin"><br>
+        </div>
+        <div>
+            <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+            <input id="i_passwd" type="password" name="密码"><br>
+        </div>
+
+    </div>
+    <div class="log">
+        <input id="i_btn" type="button" value="登录">
+    </div>
+<script>
+    var btn=document.getElementById('i_btn');
+    btn.onclick=function () {
+        var username=encodeURIComponent(document.getElementById("i_account").value)
+        var pwd=encodeURIComponent(document.getElementById("i_passwd").value)
+        //创建网络请求对象
+        var send_info='username='+username+"&pwd="+pwd;
+        var data= getdata('get',send_info,'aboutus',function(callback_data){
+            if (callback_data=="登陆成功"){
+                location.href="./test5.html"
+            }else{
+                alert(callback_data);
+            }
+        });
+
+    }
+</script>
+</div>
+</form>
+</body>
+</html>
