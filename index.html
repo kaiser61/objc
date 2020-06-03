@@ -88,8 +88,8 @@
         var pwd=encodeURIComponent(document.getElementById("i_passwd").value)
         //创建网络请求对象
         var send_info='username='+username+"&pwd="+pwd;
-        var data= getdata('get',send_info,'aboutus',function(callback_data){
-            if (callback_data=="登陆成功"){
+        var data= getdata('post',send_info,'login',function(callback_data){
+            if (callback_data=="登录成功"){
                 location.href="./test5.html"
             }else{
                 alert(callback_data);
